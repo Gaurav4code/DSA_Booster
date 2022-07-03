@@ -36,7 +36,7 @@ export default Herosection;
 const Header = styled.div`
   display: block;
   border: solid red 2px;
-
+  height: 100px;
   h1 {
     font-size: 100px;
 
@@ -53,7 +53,7 @@ const Header = styled.div`
 `;
 
 const Container = styled.div`
-  height: 1200px;
+  height: 1500px;
   margin: 50px 60px;
   background-color: #4318ff;
   display: grid;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import Questions from "../components/Questions";
 import Gu from "../components/GU";
 const Card = (props) => {
@@ -12,10 +13,16 @@ const Card = (props) => {
   };
   return (
     <>
-      <Container>
+      <Container
+        whileHover={{
+          scale: 1.2
+        }}
+      >
         <Top>
           <h1>{props.Head}</h1>
-          <Button onClick={navigateToQuestion}>Start Now</Button>
+          <Button whileTap={{ scale: 0.9 }} onClick={navigateToQuestion}>
+            Start Now
+          </Button>
         </Top>
         <Routes>
           <Route path={props.link} element={<Gu />} />
@@ -30,18 +37,18 @@ const Card = (props) => {
 
 export default Card;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   height: 200px;
   width: 350px;
   border: none;
   padding: 10px 10px;
-
+  margin: 30px 50px;
   background: linear-gradient(136.98deg, #1cd5f7 33.72%, #bfebf3 91.89%);
   box-shadow: 8px 6px 4px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
 
   font-family: "DM Sans";
-  color: #ffffff;
+  color: #2b06cb;
 
   h1 {
     font-size: 100px;
@@ -55,7 +62,7 @@ const Container = styled.div`
     font-size: 20px;
     line-height: 26px;
 
-    color: #ffffff;
+    color: #2b06cb;
   }
 `;
 
